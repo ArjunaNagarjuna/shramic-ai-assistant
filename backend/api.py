@@ -5,7 +5,9 @@ from pydantic import BaseModel
 from backend.chatbot import ask_chatbot
 
 app = FastAPI()
-
+@app.get("/")
+def home():
+    return {"message": "Shramic AI Assistant API is running"}
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
